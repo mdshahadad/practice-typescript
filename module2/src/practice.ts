@@ -83,5 +83,15 @@
 
     // is this code right or wrong. if wrong then give write and explain it and also if there is a better ways give them
 
+    // Task 6: Spread and Rest Operators, Destructuring
+
+    const sumOfNumeric = (...num: number[]): number => {
+        const sum = num.reduce((total, current) => (total + current), 0);
+        return sum;
+    }
+
+    const resultNum: number = sumOfNumeric(1, 22, 44, 8, 34, 90, 10);
+    console.log(resultNum)
+
 
 }
