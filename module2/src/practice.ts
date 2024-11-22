@@ -43,5 +43,22 @@
         friends: ['Muntasir', 'Avijit', 'Abdur', 'Ifti'],
     }
 
+    // Task 4: Union and Intersection Types
+    interface Book {
+        name: string;
+        author: string
+        releaseDate: string;
+        pageNumber: number;
+    }
+
+    interface Magazine {
+        name: string;
+        releaseDate: string;
+        pageNumber: number;
+    }
+
+    type BookOrMagazine = Book | Magazine;
+    type BookAndMagazine = Book & Magazine;
+
 
 }
