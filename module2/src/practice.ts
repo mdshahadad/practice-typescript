@@ -162,7 +162,16 @@
         }
     }
 
-    console.log(getEmployeeCity(newEmployee))
+    console.log(getEmployeeCity(newEmployee));
+
+    // Task 10: Nullish Coalescing
+
+    const getDisplayName = (name: string | null | undefined): string => {
+        return name ?? 'Anonymous';
+    }
+
+    console.log(getDisplayName('me'));
+    console.log(getDisplayName(null))
 
 
 }
