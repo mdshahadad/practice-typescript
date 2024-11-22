@@ -91,7 +91,19 @@
     }
 
     const resultNum: number = sumOfNumeric(1, 22, 44, 8, 34, 90, 10);
-    console.log(resultNum)
+    console.log(resultNum);
 
+    // Task 7: Type Assertion and Narrowing
+    const doubleType = (value: string | number): string | number | undefined => {
+        if (typeof value === 'string') {
+            return value.length;
+        } else if (typeof value === 'number') {
+            return value * value;
+        }
+    }
+
+    const resultDoubleType = doubleType('rohid') as string;
+    const resultDoubleType1 = doubleType(5) as number;
+    console.log(resultDoubleType, resultDoubleType1)
 
 }
