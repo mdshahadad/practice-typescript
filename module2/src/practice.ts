@@ -106,4 +106,31 @@
     const resultDoubleType1 = doubleType(5) as number;
     console.log(resultDoubleType, resultDoubleType1)
 
+
+    // Task 8: Intersection Types
+    interface User {
+        name: string;
+        email: string;
+    }
+
+
+    interface Admin {
+        adminLevel: number;
+    }
+
+    type AdminUser = User & Admin;
+
+    const describeAdmin = (user: AdminUser): string => {
+        // console.log(user)
+        return `${user.name} ${user.email} is an admin with level ${user.adminLevel}`;
+    }
+
+    const admin: AdminUser = {
+        name: 'shahadad',
+        email: 'me@gmail.com',
+        adminLevel: 4,
+    }
+
+    console.log(describeAdmin(admin));
+
 }
