@@ -133,4 +133,36 @@
 
     console.log(describeAdmin(admin));
 
+
+    // Task 9: Optional Chaining
+
+    interface Employee {
+        name: string;
+        address: {
+            roadNo: number;
+            houseNo: number;
+            country: "Bangladesh";
+            city?: string;
+        }
+    }
+
+    const getEmployeeCity = (employee: Employee): string => {
+        const city = employee?.address?.city ? employee?.address?.city : 'NO CITY';
+        console.log(city)
+        return city;
+    }
+
+    const newEmployee: Employee = {
+        name: 'shahadad',
+        address: {
+            roadNo: 5,
+            houseNo: 10,
+            country: 'Bangladesh',
+            city: 'chittagong',
+        }
+    }
+
+    console.log(getEmployeeCity(newEmployee))
+
+
 }
