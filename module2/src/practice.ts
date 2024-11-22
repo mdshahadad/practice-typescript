@@ -186,4 +186,12 @@
     console.log(processData(10));
 
 
+    // Task 12: Never Type
+    const handleError = (message: string): never => {
+        throw new Error(message);
+    }
+
+    handleError('Haha you got a new error');
+
+
 }
