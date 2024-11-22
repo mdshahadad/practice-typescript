@@ -171,7 +171,19 @@
     }
 
     console.log(getDisplayName('me'));
-    console.log(getDisplayName(null))
+    console.log(getDisplayName(null));
+
+    // Task 11: Unknown Type
+    const processData = (data: unknown) => {
+        if (typeof data === 'string') {
+            return data.toLocaleUpperCase();
+        } else if (typeof data === 'number') {
+            return data * data;
+        }
+    }
+
+    console.log(processData('shahadad'));
+    console.log(processData(10));
 
 
 }
