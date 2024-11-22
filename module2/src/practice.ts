@@ -61,4 +61,27 @@
     type BookAndMagazine = Book & Magazine;
 
 
+    // Task 5: Function Type
+    const reverseString = (input: string): string => {
+        /*
+            let newString: string = '';
+            for (let i: number = 0; i < input.length; i++) {
+                newString = input[i] + newString;
+            }
+        */
+        // Best Way for efficient:
+        const newString: string = input.split('').reverse().join('');
+
+
+        return newString;
+    }
+
+    const resultString: string = reverseString('shahadad');
+    console.log("Result: ", resultString);
+
+
+
+    // is this code right or wrong. if wrong then give write and explain it and also if there is a better ways give them
+
+
 }
