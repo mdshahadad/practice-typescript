@@ -191,7 +191,28 @@
         throw new Error(message);
     }
 
-    handleError('Haha you got a new error');
+    // handleError('Haha you got a new error');
 
+    // Task 13: Generics with Functions and Interfaces
+    const generic = <T>(arr: T[]): T[] => {
+        let newArr;
+
+        for (let i = 0; i < arr.length; i++) {
+
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] === arr[j]) {
+                    arr.splice(j, 1);
+                    console.log(arr);
+                    j--
+                }
+            }
+        }
+        return [...arr];
+    }
+
+    const num = [1, 2, 2, 3, 4];
+
+    const callGeneric = generic(num);
+    console.log(callGeneric)
 
 }
