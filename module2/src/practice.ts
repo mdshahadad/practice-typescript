@@ -202,7 +202,6 @@
             for (let j = i + 1; j < arr.length; j++) {
                 if (arr[i] === arr[j]) {
                     arr.splice(j, 1);
-                    console.log(arr);
                     j--
                 }
             }
@@ -213,6 +212,44 @@
     const num = [1, 2, 2, 3, 4];
 
     const callGeneric = generic(num);
-    console.log(callGeneric)
+    console.log(callGeneric);
+
+    const strings = ["apple", "banana", "apple", "orange"];
+    const uniqueStrings = generic(strings);
+    console.log(uniqueStrings);
+
+    // Task 14: Asynchronous TypeScript and Type Aliases
+
+    type UserForFunction = {
+        name: string;
+        age: number;
+    }
+
+    const sayHello = async (): Promise<UserForFunction> => {
+        return new Promise<UserForFunction>((resolve, reject) => {
+            setTimeout(() => {
+                resolve({ name: 'md shahadad', age: 30 })
+            }, 1000);
+        })
+    }
+
+    console.log(sayHello());
+
+    // Task 15: Type Guards
+    const isString = (value: unknown): value is string => {
+        return typeof value === 'string';
+    }
+
+    const printUpperCase = (value: unknown): void => {
+        const stringValue = isString(value);
+        if (stringValue) {
+            console.log(value.toUpperCase());
+        } else {
+            console.log('Provided value is not string');
+        }
+    }
+
+    printUpperCase('shahadad');
+    printUpperCase(10);
 
 }
