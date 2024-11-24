@@ -80,9 +80,6 @@
     console.log("Result: ", resultString);
 
 
-
-    // is this code right or wrong. if wrong then give write and explain it and also if there is a better ways give them
-
     // Task 6: Spread and Rest Operators, Destructuring
 
     const sumOfNumeric = (...num: number[]): number => {
@@ -251,5 +248,25 @@
 
     printUpperCase('shahadad');
     printUpperCase(10);
+
+    // Task 16: Utility Types and Keyof Constraints
+    const checkKeyOf = <X, Y extends keyof X>(obj: X, key: Y): X[Y] => {
+        return obj[key];
+    }
+
+    type UserCheck = {
+        name: string;
+        age: number;
+        id: number;
+    }
+
+    const userCheck: UserCheck = {
+        name: 'shahadad',
+        age: 23,
+        id: 111,
+    }
+
+    const result1 = checkKeyOf(userCheck, 'name') as string;
+    const result2 = checkKeyOf(userCheck, "id") as number;
 
 }
